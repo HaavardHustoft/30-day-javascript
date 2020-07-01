@@ -2,6 +2,23 @@ const secondHand = document.querySelector('.second-hand');
 const minHand = document.querySelector('.min-hand');
 const hourHand = document.querySelector('.hour-hand');
 
+const form = document.getElementById("zone-form");
+const log = document.getElementById('log');
+
+
+function formSubmit(event){
+    log.textContent = `The current timezone is ${event.timeSTamp}`;
+}
+
+
+
+form.addEventListener('submit', formSubmit)
+
+function changeTimeZone(date, zone){
+    const newDate = new Date(date.toLocaleDateString("en-US", {timeZone: "America/New_York"}));
+}
+
+
 function setDate(){
     const now = new Date();
     const seconds = now.getSeconds();

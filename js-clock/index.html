@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="zone-selector">
-        <form action="submit">
-            <select name="timezones" id="time" onchange="this.form.submit()">
+        <form action="submit" id="zone-form">
+            <select name="timezones" id="time">
                 <option value="Oslo">Oslo</option>
                 <option value="London">London</option>
                 <option value="New York">New York</option>
@@ -17,6 +17,7 @@
             </select>
             <input type="submit">
         </form>
+        <p id="log"></p>
     </div>
 
     <div class="clock">
