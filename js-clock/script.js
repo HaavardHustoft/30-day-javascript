@@ -6,17 +6,18 @@ const form = document.getElementById("zone-form");
 const log = document.getElementById('log');
 
 
-function formSubmit(event){
-    log.textContent = `The current timezone is ${event.timeSTamp}`;
-}
+const select = document.getElementById('time');
 
 
 
-form.addEventListener('submit', formSubmit)
 
-function changeTimeZone(date, zone){
-    const newDate = new Date(date.toLocaleDateString("en-US", {timeZone: "America/New_York"}));
-}
+
+/* form.addEventListener('submit', formSubmit)
+ */
+
+ select.addEventListener('change', function() {
+     changeTimeZone(this.value);
+ });
 
 
 function setDate(){
@@ -34,4 +35,4 @@ function setDate(){
     hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 }
 
-setInterval(setDate, 1000);
+setInterval(newYorkTime, 1000);
